@@ -29,10 +29,7 @@ drawable-xxhdpi
 With an appropriate size image in each of these directories
 
 Also 3 files will be created in the Android directory 
-that can be used for the google play store listing:
-ic_launcher-web.png
-Poseidon-180-120.png
-Poseidon-1024-500.png
+that can be used for the google play store listing.
 
 2-The IOS folder:
 
