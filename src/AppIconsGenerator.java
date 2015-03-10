@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
@@ -62,15 +63,20 @@ public class AppIconsGenerator {
 
 	private static void createIOSScreenshots(final String path,
 			final String fileName) throws IOException {
-		List<Point> launchIcons=Arrays.asList(new Point(960,640),new Point(1334,750),new Point(2208,1242));
+		List<Point> launchIcons=Arrays.asList(new Point(640,960),new Point(640,1136),new Point(750,1334),new Point(1242,2208),new Point(1536,2048),new Point(960,640),new Point(1024,1024),new Point(1136,640),new Point(1334,750),new Point(2208,1242),new Point(2048,1536));
 		File iosDir=new File(path+"IOS/");
 		iosDir.mkdir();
 
 		BufferedImage originalImage = ImageIO.read(new File(path+fileName+".png"));
-		int type = originalImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : originalImage.getType();
+	 
+		  // create a blank, RGB, same width and height, and a white background
+		  BufferedImage newBufferedImage = new BufferedImage(originalImage.getWidth(),
+				  originalImage.getHeight(), BufferedImage.TYPE_INT_RGB);
+		  newBufferedImage.createGraphics().drawImage(originalImage, 0, 0, Color.WHITE, null);
+		
 		for(Point p : launchIcons){
-			BufferedImage resizeImagePng = resizeImage(originalImage, type, p.x, p.y);
-			ImageIO.write(resizeImagePng, "png", new File(iosDir.getAbsoluteFile()+"/"+fileName+"-"+p.x+"-"+p.y+".png"));
+			BufferedImage resizeImagePng = resizeImage(newBufferedImage, BufferedImage.TYPE_INT_RGB, p.x, p.y);
+			ImageIO.write(resizeImagePng, "jpg", new File(iosDir.getAbsoluteFile()+"/"+fileName+"-"+p.x+"-"+p.y+".jpg"));
 		};
 	}
 
