@@ -22,11 +22,21 @@ public class AppIconsGenerator {
 	public static void main(String [] args){
 		final String path=args[0];
 		final String fileName=args[1];
+		final String option=args[2];
 
 		try {
-			createAndroidIcons(path, fileName);
-			createIOSScreenshots(path, fileName);
-			createAppIconsLaunchImages(path, fileName);
+			if(option.equalsIgnoreCase("android")){
+				createAndroidIcons(path, fileName);
+			}
+			if(option.equalsIgnoreCase("iosScreenshots")){
+				createIOSScreenshots(path, fileName);
+			}
+			if(option.equalsIgnoreCase("iosLaunchImages")){
+				createAppIconsLaunchImages(path, fileName);
+			}
+			if(option.equalsIgnoreCase("windows")){
+				createWindowsAppIcons(path, fileName);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -58,6 +68,28 @@ public class AppIconsGenerator {
 		for(Point p : launchIcons){
 			BufferedImage resizeImagePng = resizeImage(originalImage, type, p.x, p.y);
 			ImageIO.write(resizeImagePng, "png", new File(androidDir.getAbsolutePath()+"/"+fileName+"-"+p.x+"-"+p.y+".png"));
+		};
+	}
+	
+	private static void createWindowsAppIcons(final String path,
+			final String fileName) throws IOException {
+		List<Point> launchIcons=Arrays.asList(new Point(1152,1920),new Point(58,58),new Point(120,120),new Point(106,106),new Point(744,360),
+				new Point(360,360),new Point(170,170),new Point(1116,540),new Point(43,43),new Point(90,90),
+				new Point(54,54),new Point(558,558),new Point(558,270),new Point(270,270),new Point(126,126));
+		List<String> fileFormats=Arrays.asList(".png",".png",".png",".png",".png",
+				".png",".png",".png",".jpg",".png",
+				".png",".jpg",".jpg",".png",".jpg");
+		File winDir=new File(path+"Windows/");
+		winDir.mkdir();
+
+		BufferedImage originalImage = ImageIO.read(new File(path+fileName+".png"));
+		int type = originalImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : originalImage.getType();
+		
+		for(int i=0;i<launchIcons.size();i++){
+			Point p=launchIcons.get(i);
+			String fileFormat=fileFormats.get(i);
+			BufferedImage resizeImagePng = resizeImage(originalImage, type, p.x, p.y);
+			ImageIO.write(resizeImagePng, "png", new File(winDir.getAbsoluteFile()+"/"+fileName+"-"+p.x+"-"+p.y+fileFormat));
 		};
 	}
 
