@@ -100,7 +100,7 @@ public class AppIconsGenerator {
 
 	private static void createIOSScreenshots(final String path,
 			final String fileName) throws IOException {
-		List<Point> launchIcons=Arrays.asList(new Point(640,960),new Point(640,1136),new Point(750,1334),new Point(1242,2208),new Point(1536,2048),new Point(960,640),new Point(1024,1024),new Point(1136,640),new Point(1334,750),new Point(2208,1242),new Point(2048,1536));
+		List<Point> launchIcons=Arrays.asList(new Point(640,960),new Point(640,1136),new Point(750,1334),new Point(1242,2208),new Point(1536,2048),new Point(960,640),new Point(1024,1024),new Point(1136,640),new Point(1334,750),new Point(2208,1242),new Point(2048,1536),new Point(2732,2048));
 		File iosDir=new File(path+"IOS/");
 		iosDir.mkdir();
 
