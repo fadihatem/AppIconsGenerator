@@ -37,4 +37,8 @@ Two folders will be created AppIcon.appiconset and LaunchImage.launchimage with 
 images in each folder will be placed.  Also 3 images will be placed in the IOS folder that
 can be used for the appstore listing.
 
+3-Windows folder:
+
+Windows related files will be created
+
 Enjoy

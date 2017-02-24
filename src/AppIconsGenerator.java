@@ -20,6 +20,11 @@ public class AppIconsGenerator {
 
 
 	public static void main(String [] args){
+		
+		if(args==null || args.length==0){
+			System.out.println("Usage:  AppIconsGenerator [path] [fileName] [android|iosScreenshots|iosLaunchImages|windows] ");
+		}
+		
 		final String path=args[0];
 		final String fileName=args[1];
 		final String option=args[2];
