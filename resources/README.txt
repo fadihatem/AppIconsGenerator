@@ -14,7 +14,9 @@ This java program is compatible with Java 1.6 or later and all you need to run i
 directory as a first argument and the name of your png base image file without the file extensions as a second argument:
 Example:
 
-java AppIconsGenerator YourPath YourBaseImageFileName
+java AppIconsGenerator YourPathWhereTheResourcesFilesAndImageAre YourBaseImageFileNameWIthout.PNG [android|iosScreenshots|iosLaunchImages|windows]
+
+If optional argument for android etc. is not supplied it will do all optiona
 
 Two directories will be created in the specified path Android and IOS.
 
