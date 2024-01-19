@@ -94,7 +94,8 @@ public class AppIconsGenerator {
 				new Point(120, 120), new Point(106, 106), new Point(744, 360), new Point(360, 360), new Point(170, 170),
 				new Point(1116, 540), new Point(43, 43), new Point(90, 90), new Point(54, 54), new Point(558, 558),
 				new Point(558, 270), new Point(270, 270), new Point(126, 126));
-		List<String> fileFormats = Arrays.asList(".png", ".png", ".png", ".png", ".png",
+		List<String> fileFormats = Arrays.asList(".jpg", ".jpg", ".jpg", ".jpg", ".jpg", ".jpg", ".png", ".png", ".png",
+				".png", ".png",
 				".png", ".png", ".png", ".jpg", ".png",
 				".png", ".jpg", ".jpg", ".png", ".jpg");
 		File winDir = new File(path + "Windows/");
