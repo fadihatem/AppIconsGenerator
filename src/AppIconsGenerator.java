@@ -89,10 +89,11 @@ public class AppIconsGenerator {
 
 	private static void createWindowsAppIcons(final String path,
 			final String fileName) throws IOException {
-		List<Point> launchIcons = Arrays.asList(new Point(1152, 1920), new Point(58, 58), new Point(120, 120),
-				new Point(106, 106), new Point(744, 360),
-				new Point(360, 360), new Point(170, 170), new Point(1116, 540), new Point(43, 43), new Point(90, 90),
-				new Point(54, 54), new Point(558, 558), new Point(558, 270), new Point(270, 270), new Point(126, 126));
+		List<Point> launchIcons = Arrays.asList(new Point(16, 16), new Point(32, 32), new Point(64, 64),
+				new Point(128, 128), new Point(256, 256), new Point(512, 512), new Point(1152, 1920), new Point(58, 58),
+				new Point(120, 120), new Point(106, 106), new Point(744, 360), new Point(360, 360), new Point(170, 170),
+				new Point(1116, 540), new Point(43, 43), new Point(90, 90), new Point(54, 54), new Point(558, 558),
+				new Point(558, 270), new Point(270, 270), new Point(126, 126));
 		List<String> fileFormats = Arrays.asList(".png", ".png", ".png", ".png", ".png",
 				".png", ".png", ".png", ".jpg", ".png",
 				".png", ".jpg", ".jpg", ".png", ".jpg");
